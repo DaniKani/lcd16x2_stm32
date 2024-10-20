@@ -36,6 +36,16 @@ When the code is executed, the following output will be displayed on the LCD:
 
 ![Hardware Setup](./HardwareExample.jpg)
 
+## Enabling Floating-Point Support for printf
+
+By default, the printf function in STM32 projects does not support floating-point numbers (like float and double) to conserve memory and improve performance in embedded systems. To display floating-point numbers (e.g., %.2f), you need to enable floating-point support for printf. To do this, add the following linker flag in your STM32CubeIDE project settings, like in the following picture:
+
+```
+-u _printf_float
+```
+
+![Linker Settings](./LinkerSettings.png)
+
 ## Library API
 
 ### `lcd_init()`
